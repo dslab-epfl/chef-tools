@@ -4,3 +4,6 @@ s2e-last
 
 # IDEA files
 .idea
+
+# Emacs temporaries
+*~
