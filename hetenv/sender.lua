@@ -2,24 +2,28 @@
 
 require "symtc"
 
-function pipe_test (provider, pipe_file)
-   pipe_file = pipe_file or "pipey"
-
-   local pipe_fd, err = io.open(pipe_file, "r+")
-   if pipe_fd == nil then
-      print("Could not open pipe: "..err)
-      io.stderr:flush()
-      error("Could not open pipe")
+function pipe_test (provider, send_file, recv_file)
+   local send_fd, err = io.open(send_file, "w")
+   if send_fd == nil then
+      print("Could not open send pipe: " .. err)
+      error()
    end
+   print("Send pipe open")
+   local recv_fd, err = io.open(recv_file, "r")
+   if recv_fd == nil then
+      print("Could not open receive pipe: " .. err)
+      error()
+   end
+   print("Receive pipe open")
 
-   print("Pipe open")
    local data = provider:getstring("message\n", "symval")
-   pipe_fd:write(data)
+   send_fd:write(data)
+   send_fd:close()
    print("Message sent")
 
-   response = pipe_fd:read()
-   print("Message received of size "..#response)
-   pipe_fd:close()
+   response = recv_fd:read()
+   print("Message received of size " .. #response)
+   recv_fd:close()
 end
 
-symtc.execute(arg[2], pipe_test, arg[1])
+symtc.execute(arg[3], pipe_test, arg[1], arg[2])
