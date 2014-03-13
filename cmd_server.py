@@ -47,6 +47,7 @@ class Command(object):
     def execute(self):
         environ = dict(os.environ)
         environ.update(self.environment)
+        environ["CHEF_ROOT"] = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
         os.execvpe(self.args[0], self.args, environ)
 
