@@ -40,8 +40,9 @@ import time
 from datetime import datetime, timedelta
 
 THIS_DIR = os.path.dirname(__file__)
-S2E_ROOT = os.path.abspath(os.path.join(THIS_DIR, "..", ".."))
-CHEF_ROOT = os.path.abspath(os.path.join(S2E_ROOT, ".."))
+CHEF_ROOT = os.path.abspath(os.path.join(THIS_DIR, ".."))
+S2E_ROOT = os.path.abspath(os.path.join(CHEF_ROOT, "s2e"))
+
 
 RAW_IMAGE_PATH = os.path.join(CHEF_ROOT, "vm", "chef_disk.raw")
 S2E_IMAGE_PATH = os.path.join(CHEF_ROOT, "vm", "chef_disk.s2e")
