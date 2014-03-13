@@ -30,12 +30,17 @@ targets, so you should provision enough space.
 * Packages: build-essential unzip git-core [ libssl-dev libsqlite3-dev libreadline-dev libz2-dev ] (for Python)
 
 * Dir structure:
- ~/chef
-   python-src/
-   python-build/
-   lua/
+ $CHEF_ROOT
+   tools/
+   s2e/ - Host only
      build/
-   
+     s2e/
+   python/
+     chef/
+       build/
+   lua/
+     chef/
+       build/
 
 
 1. Create a standard S2E image called `chef_disk.raw` and place it in the `$CHEF_ROOT/vm/` directory.
