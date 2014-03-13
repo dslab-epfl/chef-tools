@@ -16,8 +16,12 @@ def main():
 
     message = sendf.read()
     print "RECEIVER: Read message"
-    
-    print >>recvf, "Hello"
+
+    if message.startswith("me"):
+        print >>recvf, "Hello"
+    else:
+        print >>recvf, "Bye"
+
     print "RECEIVER: Sent response"
 
     sendf.close()
