@@ -11,5 +11,8 @@ rm -f recv_channel
 mkfifo send_channel
 mkfifo recv_channel
 
+export PYTHONSYMBEX=1
+export LUASYMBEX=1
+
 python $DIR/receiver.py send_channel recv_channel &
 $CHEF_ROOT/lua/chef/lua_runner.py $DIR/sender.lua send_channel recv_channel
