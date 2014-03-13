@@ -16,7 +16,7 @@ function pipe_test (provider, send_file, recv_file)
    end
    print("SENDER: Open recv pipe")
 
-   local data = provider:getstring("message\n", "symval")
+   local data = provider:getstring("I'm Joe\n", "symval")
    send_fd:write(data)
    send_fd:close()
    print("SENDER: Message sent")

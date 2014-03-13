@@ -17,8 +17,8 @@ def main():
     message = sendf.read()
     print "RECEIVER: Read message"
 
-    if message.startswith("Hi,"):
-        print >>recvf, "Hello,", message.split(",", 1)[1]
+    if message.startswith("I'm "):
+        print >>recvf, "Hello,", message.split(" ", 1)[1]
     else:
         print >>recvf, "Bye,", message
 
