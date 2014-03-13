@@ -11,4 +11,5 @@ rm -f recv_channel
 mkfifo send_channel
 mkfifo recv_channel
 
+python $DIR/receiver.py send_channel recv_channel &
 $CHEF_ROOT/lua/chef/lua_runner.py $DIR/sender.lua send_channel recv_channel
