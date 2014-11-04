@@ -1,25 +1,15 @@
-Chef Usage Instructions
-=======================
+## Chef Usage Instructions
 
-**NOTE**: This document is work-in-progress and some edges in Chef may
-  be still rough.  In case you encounter any difficulties following
-  the steps below, please contact us on the S2E-Dev mailing list.
+**NOTE**: This document is work-in-progress and some edges in Chef may be still rough.  In case you encounter any difficulties following the steps below, please contact us on the S2E-Dev mailing list.
 
-The `chef/` folder in S2E contains all the scripts and libraries
-needed to operate Chef.  This file documents their usage along
-standard Chef workflows.
+This repository contains all the scripts and libraries needed to operate Chef.  It contains both host and guest utilities, so you will need to clone it in both places.  This file documents the usage of the utilities by following the recommended Chef workflow.
 
 
-Preparing a Chef VM
--------------------
+### Preparing a Chef VM
 
 The following steps illustrate how to create a Chef S2E virtual machine:
 
-1. In the `$CHEF_ROOT/vm` directory, create a new S2E raw disk
-image. 4 GB is the minimum size, but you may want to enlarge your
-capacity depending on your needs.  The VM will host all interpreters,
-their dependencies, the intermediate object files, and all testing
-targets, so you should provision enough space.
+1. In the ``$CHEF_ROOT/vm`` directory, create a new S2E raw disk image. 4 GB is the minimum size, but you may want to enlarge your capacity depending on your needs.  The VM will host all interpreters, their dependencies, the intermediate object files, and all testing targets, so you should provision enough space.
 
 2. Download an i386 Debian installation image.  For example,
 `wget http://cdimage.debian.org/debian-cd/current/i386/iso-cd/debian-7.4.0-i386-netinst.iso`.
@@ -42,7 +32,6 @@ targets, so you should provision enough space.
     lua/
      chef/
        build/
-
 
 1. Create a standard S2E image called `chef_disk.raw` and place it in the `$CHEF_ROOT/vm/` directory.
 2. Inside the image, checkout the Chef-adapted interpreter repository and install the interpreter according to its instructions.
