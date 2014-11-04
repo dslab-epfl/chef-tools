@@ -40,6 +40,7 @@ The following steps illustrate how to create a Chef S2E virtual machine.
 4. Install the basic system (no extras), then reboot into the new system
 
 5. Install additional packages:
+
         $ sudo apt-get install build-essential unzip git-core
 
    For building Python, you will also need:
