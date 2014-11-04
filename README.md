@@ -30,15 +30,16 @@ targets, so you should provision enough space.
 * Packages: build-essential unzip git-core [ libssl-dev libsqlite3-dev libreadline-dev libz2-dev ] (for Python)
 
 * Dir structure:
- $CHEF_ROOT
-   tools/
-   s2e/ - Host only
+
+    $CHEF_ROOT
+    tools/
+    s2e/ - Host only
      build/
      s2e/
-   python/
+    python/
      chef/
        build/
-   lua/
+    lua/
      chef/
        build/
 
