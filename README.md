@@ -116,7 +116,9 @@ We will use the `run_qemu.py` script to prepare the snapshot and run it in symbo
 
 3. Run the VM snapshot in symbolic mode:
 
-        $ ./run_qemu.py sym -f <S2E config file>
+        $ ./run_qemu.py sym -f ./config/cupa-prio.lua
+        
+   You can also use a different configuration file in the ``./config`` directory, or derive your own.
         
 If you ever need to resume the VM from the snapshot, but not in symbolic mode (e.g., to re-adjust the snapshot without rebooting the entire VM), you can do so using:
 
